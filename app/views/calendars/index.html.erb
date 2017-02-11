@@ -1,7 +1,33 @@
-<div class="container">
+<%= javascript_include_tag 'calendar', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag 'calendar' %>
+
+<script type="text/javascript">
+  Calendar.init();
+</script>
+
+<div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12">
-      Hello World
+    <div class="col-xs-12" id="settings">
+      <%= form_tag("/", :id => "calendar-setup-form") do %>
+      <!-- Generate shiftblock -->
+        <%= label_tag('num-shifts', 'Number of consecutive shifts:', :id => 'num-shifts-label') %>
+        <%= text_field_tag('num-shifts', nil) %>
+        <%= label_tag('num-dayoffs', 'Number of consecutive days off:', :id => 'num-dayoffs-label')%>
+        <%= text_field_tag('num-dayoffs', nil) %>
+        <br>
+      <!-- Choose start date of first shift block -->
+        <%= label_tag('first-shift', 'Date of first shift block:', :id => 'first-shift-label') %>
+        <%= text_field_tag('first-shift', nil, :data => {:provide => 'datepicker'}) %>
+        <br>
+      <!-- Generate calendar button-->
+        <%= submit_tag('Generate Calendar') %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12" id="calendar">
+      <!-- display calendar -->
+      <!-- sync with google calendar button -->
     </div>
   </div>
 </div>
