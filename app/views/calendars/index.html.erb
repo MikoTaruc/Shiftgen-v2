@@ -10,14 +10,14 @@
     <div class="col-xs-12" id="settings">
       <%= form_tag("/", :id => "calendar-setup-form") do %>
       <!-- Generate shiftblock -->
-        <%= label_tag('num-shifts', 'Number of consecutive shifts:', :id => 'num-shifts-label') %>
+        <%= label_tag('num-shifts', 'Length of set:', :id => 'num-shifts-label', :class => 'form-label') %>
         <%= text_field_tag('num-shifts', nil) %>
-        <%= label_tag('num-dayoffs', 'Number of consecutive days off:', :id => 'num-dayoffs-label')%>
+        <%= label_tag('num-dayoffs', 'Length of days off:', :id => 'num-dayoffs-label', :class => 'form-label')%>
         <%= text_field_tag('num-dayoffs', nil) %>
         <br>
       <!-- Choose start date of first shift block -->
-        <%= label_tag('first-shift', 'Date of first shift block:', :id => 'first-shift-label') %>
-        <%= text_field_tag('first-shift', nil, :data => {:provide => 'datepicker'}) %>
+        <%= label_tag('first-shift', 'Date of first shift block:', :id => 'first-shift-label', :class => 'form-label') %>
+        <%= text_field_tag('first-shift', nil, :data => {'provide': 'datepicker', 'date-format': 'yyyy/mm/dd'}) %>
         <br>
       <!-- Generate calendar button-->
         <%= submit_tag('Generate Calendar') %>

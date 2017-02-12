@@ -7,16 +7,15 @@
 #settings {
   background-color: #aaaeb5;
 
-  #num-shifts-label {
-    width: 215px;
+  input[type=text] {
+    border-style: solid;
   }
 
-  #num-dayoffs-label {
-    width: 220px;
-    margin-left: 15px;
+  .form-label {
+    width: 170px;
   }
 
-  #first-shift-label {
-    width: 215px;
+  #num-shifts {
+    margin-right: 15px;
   }
 }
